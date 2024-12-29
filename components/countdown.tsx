@@ -24,7 +24,7 @@ const Countdown = () => {
 
   return (
       <p className="text-[#755955] text-sm">
-        Será realizado o evento em {timeRemaining.days} dias, {timeRemaining.hours} horas,{' '}
+        Será realizado em {timeRemaining.days} dias, {timeRemaining.hours} horas,{' '}
         {timeRemaining.minutes} minutos e {timeRemaining.seconds} segundos.
       </p>
   );
