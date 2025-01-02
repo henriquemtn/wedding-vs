@@ -15,7 +15,7 @@ import { EditIcon, GiftIcon, PlusIcon, Trash2Icon, UserIcon, UserRoundPenIcon } 
 import { AddEditGiftDialog } from './add-edit-gift'
 import { initializeApp } from 'firebase/app'
 import { getFirestore, collection, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore'
-import { SignOutButton, useUser } from '@clerk/nextjs'
+import { UserButton, useUser } from '@clerk/nextjs'
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -103,7 +103,10 @@ export function GiftList() {
 
   return (
     <div className='bg-white border rounded-md p-6'>
-      <h1 className="text-xl mb-5">Olá, <span className='capitalize'>{user?.username}</span>👋</h1>
+      <div className='flex flex-row items-center gap-4 mb-8'>
+        <UserButton />
+        <span className="text-xl">Olá, <span className='capitalize'>{user?.username}</span>👋</span>
+      </div>
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-0 justify-between items-center mb-4">
         <Input
           placeholder="Filtrar presentes..."
