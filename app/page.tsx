@@ -3,13 +3,12 @@
 import Countdown from "@/components/countdown";
 import { HeroVideo } from "@/components/hero-video";
 import LeafIcon from "@/components/ui/icons/leaf";
-import { CalendarIcon, ClockIcon, HomeIcon, MapPinIcon, PinIcon, ShirtIcon, SprayCanIcon } from 'lucide-react';
+import { CalendarIcon, ClockIcon, HomeIcon, MapPinIcon, ShirtIcon, SprayCanIcon } from 'lucide-react';
 import VitorSharonImage from "@/public/images/91943.jpg";
 import Image from "next/image";
 import { LeafDivider } from "@/components/leaf-divider";
 import { GiftRegistry } from "@/components/gift-registry";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
