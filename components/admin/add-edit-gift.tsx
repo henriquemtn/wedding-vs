@@ -22,11 +22,13 @@ interface AddEditGiftDialogProps {
     onClose: () => void;
     onSubmit: (gift: Omit<Gift, "id">, id?: string) => void;
     giftToEdit?: Gift | null;
+    userAddingGift?: boolean;
 }
 
 export function AddEditGiftDialog({
     isOpen,
     onClose,
+    userAddingGift,
     onSubmit,
     giftToEdit = null,
 }: AddEditGiftDialogProps) {
@@ -66,9 +68,9 @@ export function AddEditGiftDialog({
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
-                    {giftToEdit && (
+                    {(giftToEdit || userAddingGift) && (
                         <Input
-                            placeholder="Nome de quem presenteou"
+                            placeholder="Seu Nome"
                             value={giftedBy}
                             onChange={(e) => setGiftedBy(e.target.value)}
                         />

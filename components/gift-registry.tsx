@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog"
-import { GiftIcon, CheckIcon } from 'lucide-react';
+import { GiftIcon, CheckIcon, PlusCircle } from 'lucide-react';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, updateDoc, doc } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, updateDoc, doc, addDoc } from 'firebase/firestore';
+import { AddEditGiftDialog } from './admin/add-edit-gift';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -29,6 +30,7 @@ interface Gift {
 
 export const GiftRegistry: React.FC = () => {
   const [gifts, setGifts] = useState<Gift[]>([]);
+  const [isAddDialogOpen, setIsAddDialogOpen] = useState(false)
   const [selectedGift, setSelectedGift] = useState<Gift | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [userName, setUserName] = useState('');
@@ -78,11 +80,28 @@ export const GiftRegistry: React.FC = () => {
     setErrorMessage('');
   };
 
+  const handleAddGift = async (newGift: Omit<Gift, 'id'>) => {
+    const giftsCollection = collection(db, 'gifts')
+    const docRef = await addDoc(giftsCollection, newGift)
+    const giftWithId = { ...newGift, id: docRef.id }
+    setGifts(prev => [...prev, giftWithId])
+    setIsAddDialogOpen(false)
+  }
+
   return (
     <div className="flex flex-col justify-start w-full">
-      <h3 className="text-[#755955] mb-4 text-sm font-semibold tracking-wider">LISTA DE PRESENTES</h3>
+      <div className="flex justify-between items-center mb-4">
+        <h3 className="text-[#755955] text-sm font-semibold tracking-wider">LISTA DE PRESENTES</h3>
+        <Button 
+          onClick={() => setIsAddDialogOpen(true)}
+          className="bg-[#846e6b] hover:bg-[#755955] text-white"
+        >
+          <PlusCircle className="mr-2 h-4 w-4" />
+          Adicionar outro presente
+        </Button>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {gifts.map(gift => (
           <Card
             key={gift.id}
@@ -137,6 +156,14 @@ export const GiftRegistry: React.FC = () => {
           </div>
         </DialogContent>
       </Dialog>
+      <AddEditGiftDialog
+        isOpen={isAddDialogOpen}
+        onClose={() => setIsAddDialogOpen(false)}
+        onSubmit={handleAddGift}
+        userAddingGift
+      />
     </div>
   );
 }
+
+ 
