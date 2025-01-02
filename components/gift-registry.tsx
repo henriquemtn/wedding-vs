@@ -90,7 +90,7 @@ export const GiftRegistry: React.FC = () => {
 
   return (
     <div className="flex flex-col justify-start w-full">
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex flex-col md:flex-row gap-4 justify-between items-center mb-4">
         <h3 className="text-[#755955] text-sm font-semibold tracking-wider">LISTA DE PRESENTES</h3>
         <Button 
           onClick={() => setIsAddDialogOpen(true)}
