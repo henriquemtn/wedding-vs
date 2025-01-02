@@ -79,10 +79,10 @@ export const GiftRegistry: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col justify-start w-full md:w-1/2">
+    <div className="flex flex-col justify-start w-full">
       <h3 className="text-[#755955] mb-4 text-sm font-semibold tracking-wider">LISTA DE PRESENTES</h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {gifts.map(gift => (
           <Card
             key={gift.id}

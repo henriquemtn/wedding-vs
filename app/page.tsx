@@ -4,7 +4,11 @@ import Countdown from "@/components/countdown";
 import { HeroVideo } from "@/components/hero-video";
 import LeafIcon from "@/components/ui/icons/leaf";
 import { CalendarIcon, ClockIcon, HomeIcon, MapPinIcon, ShirtIcon, SprayCanIcon } from 'lucide-react';
-import VitorSharonImage from "@/public/images/91943.jpg";
+import Sitio from "@/public/images/sitio-vitoria.jpg";
+import Vs1 from "@/public/images/vs1.jpeg";
+import Vs2 from "@/public/images/vs2.jpeg";
+import Vs3 from "@/public/images/vs3.jpeg";
+import Vs4 from "@/public/images/vs4.jpeg";
 import Image from "next/image";
 import { LeafDivider } from "@/components/leaf-divider";
 import { GiftRegistry } from "@/components/gift-registry";
@@ -19,7 +23,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-black/40 rounded-md"></div>
             <Image
               alt="hero-image"
-              src={VitorSharonImage}
+              src={Sitio}
               className="w-full h-[440px] object-cover rounded-md"
             />
             <motion.div
@@ -49,7 +53,7 @@ export default function Home() {
             <h3 className="text-[#755955] mb-4 text-sm font-semibold tracking-wider">SOBRE O EVENTO</h3>
             <h2 className="text-black text-3xl mb-6 font-light">O Casamento será no Sitio Vitória</h2>
             <Countdown />
-            <ul className="flex flex-col gap-6 mt-8">
+            <ul className="flex flex-col gap-4 mt-8">
               <li className="flex items-center">
                 <div className="flex items-center size-10">
                   <CalendarIcon className="text-[#755955] size-6 mr-4" />
@@ -105,23 +109,23 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <Image
               alt="Vitor and Sharon moment 1"
-              src={VitorSharonImage}
-              className="w-full h-[240px] object-cover rounded-md shadow-md hover:shadow-lg transition-shadow duration-300"
+              src={Vs1}
+              className="w-full h-[240px] object-cover rounded-md shadow-md hover:shadow-lg duration-300 hover:scale-105 transition-all"
             />
             <Image
               alt="Vitor and Sharon moment 2"
-              src={VitorSharonImage}
-              className="w-full h-[240px] object-cover rounded-md shadow-md hover:shadow-lg transition-shadow duration-300"
+              src={Vs2}
+              className="w-full h-[240px] object-cover rounded-md shadow-md hover:shadow-lg duration-300 hover:scale-105 transition-all"
             />
             <Image
               alt="Vitor and Sharon moment 3"
-              src={VitorSharonImage}
-              className="w-full h-[240px] object-cover rounded-md shadow-md hover:shadow-lg transition-shadow duration-300"
+              src={Vs3}
+              className="w-full h-[240px] object-cover rounded-md shadow-md hover:shadow-lg duration-300 hover:scale-105 transition-all"
             />
             <Image
               alt="Vitor and Sharon moment 4"
-              src={VitorSharonImage}
-              className="w-full h-[240px] object-cover rounded-md shadow-md hover:shadow-lg transition-shadow duration-300"
+              src={Vs4}
+              className="w-full h-[240px] object-cover rounded-md shadow-md hover:shadow-lg duration-300 hover:scale-105 transition-all"
             />
           </div>
         </motion.section>
