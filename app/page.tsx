@@ -136,7 +136,9 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          id="gift" className="py-12 mb-12">
+          id="gift"
+          className="py-12 pb-24"
+        >
           <GiftRegistry />
         </motion.section>
       </div>

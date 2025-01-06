@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog"
-import { GiftIcon, CheckIcon, PlusCircle } from 'lucide-react';
+import { GiftIcon, CheckIcon, PlusCircle, InfoIcon } from 'lucide-react';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, updateDoc, doc, addDoc } from 'firebase/firestore';
 import { AddEditGiftDialog } from './admin/add-edit-gift';
@@ -92,7 +92,7 @@ export const GiftRegistry: React.FC = () => {
     <div className="flex flex-col justify-start w-full">
       <div className="flex flex-col md:flex-row gap-4 justify-between items-center mb-4">
         <h3 className="text-[#755955] text-sm font-semibold tracking-wider">LISTA DE PRESENTES</h3>
-        <Button 
+        <Button
           onClick={() => setIsAddDialogOpen(true)}
           className="bg-[#846e6b] hover:bg-[#755955] text-white"
         >
@@ -119,6 +119,12 @@ export const GiftRegistry: React.FC = () => {
             </CardContent>
           </Card>
         ))}
+      </div>
+
+      <div className='flex flex-col text-center justify-center items-center mt-4 text-[#846e6b]'>
+        <InfoIcon className='size-4 mr-2'/>
+        <p className='text-sm  my-2'>Caso queira ajudar na compra da nossa futura casa, ficaremos felizes em receber sua contribuição em dinheiro ou pix: <span className='font-bold'>2d863c10-0c4b-4073-8ac6-d9af80eb52ac</span></p>
+        <p className='text-sm'>Os presentes também podem ser enviados para nosso endereço: <span className='underline'>Travessa José Graciliano da Silva, 170, bloco B, apto 104</span></p>
       </div>
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -166,4 +172,3 @@ export const GiftRegistry: React.FC = () => {
   );
 }
 
- 
