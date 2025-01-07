@@ -67,17 +67,7 @@ const DATA = {
         { href: "#local", icon: MapPin, label: "Local" },
         { href: "#moments", icon: LayoutGridIcon, label: "Momentos Especiais" },
         { href: "#gift", icon: GiftIcon, label: "Lista de Presentes" },
-    ],
-    contact: {
-        social: {
-            
-            email: {
-                name: "Send Email",
-                url: "#",
-                icon: Icons.email,
-            },
-        },
-    },
+    ]
 };
 
 export function Navigation() {
@@ -103,28 +93,6 @@ export function Navigation() {
                                 </TooltipTrigger>
                                 <TooltipContent>
                                     <p>{item.label}</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </DockIcon>
-                    ))}
-                    <Separator orientation="vertical" className="h-full" />
-                    {Object.entries(DATA.contact.social).map(([name, social]) => (
-                        <DockIcon key={name}>
-                            <Tooltip>
-                                <TooltipTrigger asChild>
-                                    <Link
-                                        href={social.url}
-                                        aria-label={social.name}
-                                        className={cn(
-                                            buttonVariants({ variant: "ghost", size: "icon" }),
-                                            "size-12 rounded-full",
-                                        )}
-                                    >
-                                        <social.icon className="size-4" />
-                                    </Link>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                    <p>{name}</p>
                                 </TooltipContent>
                             </Tooltip>
                         </DockIcon>
