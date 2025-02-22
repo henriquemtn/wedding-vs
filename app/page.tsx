@@ -1,6 +1,5 @@
 "use client"
 
-import Countdown from "@/components/countdown";
 import { HeroVideo } from "@/components/hero-video";
 import LeafIcon from "@/components/ui/icons/leaf";
 import { CalendarIcon, ClockIcon, HomeIcon, MapPinIcon, ShirtIcon, SprayCanIcon } from 'lucide-react';
@@ -51,8 +50,7 @@ export default function Home() {
           <div
             className="flex flex-col justify-start w-full md:w-1/2">
             <h3 className="text-[#755955] mb-4 text-sm font-semibold tracking-wider">SOBRE O EVENTO</h3>
-            <h2 className="text-black text-3xl mb-6 font-light">O Casamento será no Sitio Vitória</h2>
-            <Countdown />
+            <h2 className="text-black text-3xl font-light">O Casamento será no Sitio Vitória</h2>
             <ul className="flex flex-col gap-4 mt-8">
               <li className="flex items-center">
                 <div className="flex items-center size-10">
