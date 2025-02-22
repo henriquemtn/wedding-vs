@@ -1,6 +1,5 @@
 "use client"
 
-import Countdown from "@/components/countdown";
 import { HeroVideo } from "@/components/hero-video";
 import LeafIcon from "@/components/ui/icons/leaf";
 import { CalendarIcon, ClockIcon, HomeIcon, MapPinIcon, ShirtIcon, SprayCanIcon } from 'lucide-react';
